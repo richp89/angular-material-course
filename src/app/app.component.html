@@ -1,1 +1,60 @@
-<mat-sidenav-container></mat-sidenav-container>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav class="mat-elevation-z4" mode="over" opened="false">
+    <mat-nav-list (click)="sidenav.close()">
+      <mat-list-item routerLink="/">
+        <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+          >library_books</mat-icon
+        >
+        <span>Courses</span>
+      </mat-list-item>
+      <mat-list-item routerLink="about">
+        <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+          >question_answer</mat-icon
+        >
+        <span>About</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+          >person_add</mat-icon
+        >
+        <span>Register</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+          >account_circle</mat-icon
+        >
+        <span>Login</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon aria-label="label"
+        ><mat-icon aria-hidden="false" aria-label="{2:label} icon"
+          >menu</mat-icon
+        ></mat-icon
+      >
+    </button>
+    <button mat-button [matMenuTriggerFor]="menu" icon>
+      <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+        >arrow_drop_down</mat-icon
+      >Screens
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/">Courses</button>
+      <button mat-menu-item routerLink="/about">About</button>
+    </mat-menu>
+    <button mat-button>
+      <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+        >person_add</mat-icon
+      >Register
+    </button>
+    <button mat-button>
+      <mat-icon aria-hidden="false" aria-label="{2:label} icon"
+        >account_circle</mat-icon
+      >Login
+    </button>
+  </mat-toolbar>
+  <div class="container"></div>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

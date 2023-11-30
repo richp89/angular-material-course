@@ -1,4 +1,4 @@
-
+@include private.private-theme-overridable-elevation(1, $config);
 
 .course-card {
   margin: 20px 10px;
